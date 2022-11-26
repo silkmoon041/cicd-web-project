@@ -1,13 +1,14 @@
 package com.sw.web;
 
 import com.sw.web.config.SpringConfig;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+@Slf4j
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        //return null;
         return new Class[0];
     }
 
@@ -18,7 +19,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected String[] getServletMappings() {
-        System.out.println(">>>>>>>>>> hi");
+        log.info(">>>>>>>>>> WebInitializer started");
         return new String[]{"/"};
     }
 
